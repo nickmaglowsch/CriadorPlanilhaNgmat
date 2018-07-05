@@ -1,0 +1,3 @@
+interface IEmpresa {
+    nome:string;
+}

@@ -1,0 +1,14 @@
+<div class="content">
+  <div class="header">
+    <h1>Escreva o nome da empresa que quer montar a escala</h1>
+  </div>
+  <div class="form">
+    <mat-form-field style="width:65%">
+      <input matInput type="text" placeholder="Nome Da Empresa" [(ngModel)]="empresa">
+    </mat-form-field>
+    <div style="display: block; width: 65%; padding: 4px; margin: 4px">
+      <a (click)="save()" mat-raised-button style="float: right;" color="primary" routerLink="/FormularioEscalaComponent">Proximo</a>
+    </div>
+
+  </div>
+</div>

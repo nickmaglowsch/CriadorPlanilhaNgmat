@@ -1,0 +1,38 @@
+<div class="content">
+  <mat-form-field style="padding: 0px 10px;">
+    <input matInput type="text" placeholder="Encarregados do posto" [(ngModel)]="encarregado">
+  </mat-form-field>
+  <mat-form-field style="padding: 0px 10px;">
+    <mat-select placeholder="horas" [(ngModel)]="horaEscala">
+      <mat-option *ngFor="let hora of horas" [value]="hora">
+        {{hora}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <div style="display: block; width: 57%; padding: 2px">
+    <button  *ngIf="!show" (click)="add()" mat-raised-button style="float: right;" color="primary" routerLink="/FormularioEscalaComponent">Adicionar</button>
+    
+    <span *ngIf="show">Dia Completo! <a (click)="save()" mat-raised-button color="primary" style="float: right;"> Salvar</a> </span>
+    
+    <div style="margin-top: 4em; padding: 5px" *ngIf="escalas.length">
+      <table>
+        <tr>
+          <th> encarregado </th>
+          <th> Horas </th>
+          <th> Delete</th>
+        </tr>
+
+        <tr *ngFor="let escalaview of escalas">
+
+          <td> {{escalaview.encarregado}} </td>
+
+
+
+          <td> {{escalaview.horaEscala}} </td>
+          <td><button (click)="delete(escalaview)" mat-icon-button color="accent" style="padding: -100px"><mat-icon>clear</mat-icon></button></td>
+        </tr>
+
+
+      </table>
+    </div>
+  </div>
